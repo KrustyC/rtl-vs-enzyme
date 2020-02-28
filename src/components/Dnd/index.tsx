@@ -45,7 +45,7 @@ type RectProps = {
 };
 
 const HEIGHT = 80;
-const Rect = styled.div.attrs(({ isDragging }) => ({
+const Rect = styled.div.attrs<RectProps>(({ isDragging }) => ({
   style: {
     transition: isDragging ? 'none' : 'all 500ms',
   },

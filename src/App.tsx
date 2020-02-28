@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { StateProvider } from './state';
 import Dnd from './components/Dnd';
 
 type TodoProps = {
@@ -39,9 +40,11 @@ const todos = [
 
 const App = () => {
   return (
-    <div>
-      <Dnd items={todos} itemHeight={80} />
-    </div>
+    <StateProvider>
+      <div>
+        <Dnd items={todos} itemHeight={80} />
+      </div>
+    </StateProvider>
   );
 };
 
